@@ -1,0 +1,15 @@
+asyncpg
+fastapi
+httpx
+langgraph
+prometheus-client
+pydantic
+pydantic-settings
+pytest
+pytest-asyncio
+redis
+ruff
+streamlit
+structlog
+uvicorn
+

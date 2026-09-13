@@ -1,0 +1,8 @@
+[
+  {"id":"01","request_text":"Our team has 40 employees entering the same customer details into three systems. Could you show us how this might be automated? We would like to speak next week.","expected_category":"Sales","expected_priority":"Medium","expected_owner":"Sales Team"},
+  {"id":"02","request_text":"The client portal has been unavailable since this morning and our staff cannot access active customer records. Please help as soon as possible.","expected_category":"Technical","expected_priority":"Urgent","expected_owner":"Engineering"},
+  {"id":"03","request_text":"Invoice NS-1048 appears to include the same implementation charge twice. Can someone review it before payment is processed Friday?","expected_category":"Billing","expected_priority":"High","expected_owner":"Finance"},
+  {"id":"04","request_text":"Can you add dark mode and change the dashboard font? There is no deadline. I am collecting ideas for a future update.","expected_category":"Technical","expected_priority":"Low","expected_owner":"Engineering"},
+  {"id":"05","request_text":"We accidentally uploaded a spreadsheet containing customer contact information to the wrong workspace. We need immediate help removing access.","expected_category":"Technical","expected_priority":"Urgent","expected_owner":"Engineering"},
+  {"id":"06","request_text":"I saw your company online and am interested in a custom AI reporting system. What would pricing and a typical timeline look like?","expected_category":"Sales","expected_priority":"Medium","expected_owner":"Sales Team"}
+]
