@@ -1,0 +1,359 @@
+{
+  "passed": 6,
+  "total": 6,
+  "results": [
+    {
+      "id": "01",
+      "expected": {
+        "id": "01",
+        "request_text": "Our team has 40 employees entering the same customer details into three systems. Could you show us how this might be automated? We would like to speak next week.",
+        "expected_category": "Sales",
+        "expected_priority": "Medium",
+        "expected_owner": "Sales Team"
+      },
+      "actual": {
+        "summary": "Client request for automation of customer data entry across three systems by 40 employees, with intent to discuss next week.",
+        "category": "Sales",
+        "priority": "Medium",
+        "priority_reason": "This is a commercial enquiry with a requested follow-up or buying intent.",
+        "owner": "Sales Team",
+        "risk_flags": [],
+        "confidence": 0.8,
+        "request_id": "0687825f-f394-47b3-ab58-c7e2df23ad37",
+        "source": "web",
+        "original_request": "Our team has 40 employees entering the same customer details into three systems. Could you show us how this might be automated? We would like to speak next week.",
+        "draft_response": "We appreciate your interest in automating customer data entry across three systems. To ensure a secure and efficient process, we recommend scheduling a brief call next week to discuss your specific requirements and available resources. Please let us know a time that works for you.",
+        "requires_human_review": true,
+        "model_used": "qwen3:4b",
+        "decision_source": "ollama",
+        "warnings": [
+          "Commercial enquiry routing was corrected by policy."
+        ],
+        "trace": [
+          {
+            "node": "sanitize",
+            "redactions": []
+          },
+          {
+            "node": "analysis_agent",
+            "attempts": 1,
+            "prompt_tokens": 129,
+            "completion_tokens": 91,
+            "duration_ns": 6052503458
+          },
+          {
+            "node": "policy_guardrail",
+            "corrections": 1
+          },
+          {
+            "node": "response_agent",
+            "attempts": 1,
+            "prompt_tokens": 194,
+            "completion_tokens": 58,
+            "duration_ns": 2339095708
+          }
+        ],
+        "created_at": "2026-09-13T15:51:45.707546Z"
+      },
+      "checks": {
+        "category": true,
+        "priority": true,
+        "owner": true
+      },
+      "passed": true
+    },
+    {
+      "id": "02",
+      "expected": {
+        "id": "02",
+        "request_text": "The client portal has been unavailable since this morning and our staff cannot access active customer records. Please help as soon as possible.",
+        "expected_category": "Technical",
+        "expected_priority": "Urgent",
+        "expected_owner": "Engineering"
+      },
+      "actual": {
+        "summary": "Client portal unavailable since morning; staff cannot access active customer records.",
+        "category": "Technical",
+        "priority": "Urgent",
+        "priority_reason": "An active customer-facing outage is blocking business operations.",
+        "owner": "Engineering",
+        "risk_flags": [],
+        "confidence": 0.95,
+        "request_id": "9f7e4945-6f3d-4370-890b-08e5648f8fb8",
+        "source": "web",
+        "original_request": "The client portal has been unavailable since this morning and our staff cannot access active customer records. Please help as soon as possible.",
+        "draft_response": "We're actively investigating the client portal outage. Please avoid accessing the portal until engineering resolves the issue. Your records remain secure and accessible once the system stabilizes.",
+        "requires_human_review": true,
+        "model_used": "qwen3:4b",
+        "decision_source": "ollama",
+        "warnings": [],
+        "trace": [
+          {
+            "node": "sanitize",
+            "redactions": []
+          },
+          {
+            "node": "analysis_agent",
+            "attempts": 1,
+            "prompt_tokens": 119,
+            "completion_tokens": 74,
+            "duration_ns": 2961437458
+          },
+          {
+            "node": "policy_guardrail",
+            "corrections": 0
+          },
+          {
+            "node": "response_agent",
+            "attempts": 1,
+            "prompt_tokens": 179,
+            "completion_tokens": 40,
+            "duration_ns": 1635593084
+          }
+        ],
+        "created_at": "2026-09-13T15:51:50.417194Z"
+      },
+      "checks": {
+        "category": true,
+        "priority": true,
+        "owner": true
+      },
+      "passed": true
+    },
+    {
+      "id": "03",
+      "expected": {
+        "id": "03",
+        "request_text": "Invoice NS-1048 appears to include the same implementation charge twice. Can someone review it before payment is processed Friday?",
+        "expected_category": "Billing",
+        "expected_priority": "High",
+        "expected_owner": "Finance"
+      },
+      "actual": {
+        "summary": "Client requests review of invoice NS-1048 due to potential duplicate implementation charge before Friday payment.",
+        "category": "Billing",
+        "priority": "High",
+        "priority_reason": "A possible duplicate charge should be reviewed before the stated payment deadline.",
+        "owner": "Finance",
+        "risk_flags": [],
+        "confidence": 0.95,
+        "request_id": "16e4ce97-1606-4f1a-aa19-55c0648bd27c",
+        "source": "web",
+        "original_request": "Invoice NS-1048 appears to include the same implementation charge twice. Can someone review it before payment is processed Friday?",
+        "draft_response": "Thank you for contacting us. We have recorded your request and routed it to Finance for review. A team member will verify the details and respond with the appropriate next step.",
+        "requires_human_review": true,
+        "model_used": "qwen3:4b",
+        "decision_source": "ollama",
+        "warnings": [
+          "draft failed after repair retry: OllamaError"
+        ],
+        "trace": [
+          {
+            "node": "sanitize",
+            "redactions": []
+          },
+          {
+            "node": "analysis_agent",
+            "attempts": 1,
+            "prompt_tokens": 121,
+            "completion_tokens": 81,
+            "duration_ns": 2827615416
+          },
+          {
+            "node": "policy_guardrail",
+            "corrections": 0
+          },
+          {
+            "node": "response_agent",
+            "status": "fallback"
+          }
+        ],
+        "created_at": "2026-09-13T15:51:56.366901Z"
+      },
+      "checks": {
+        "category": true,
+        "priority": true,
+        "owner": true
+      },
+      "passed": true
+    },
+    {
+      "id": "04",
+      "expected": {
+        "id": "04",
+        "request_text": "Can you add dark mode and change the dashboard font? There is no deadline. I am collecting ideas for a future update.",
+        "expected_category": "Technical",
+        "expected_priority": "Low",
+        "expected_owner": "Engineering"
+      },
+      "actual": {
+        "summary": "Client requests adding dark mode and changing dashboard font with no deadline; described as future update ideas.",
+        "category": "Technical",
+        "priority": "Low",
+        "priority_reason": "This is a future product enhancement with no deadline or current service impact.",
+        "owner": "Engineering",
+        "risk_flags": [],
+        "confidence": 0.9,
+        "request_id": "73ac4d0e-f83b-4e8c-a6c6-0d4577224ff0",
+        "source": "web",
+        "original_request": "Can you add dark mode and change the dashboard font? There is no deadline. I am collecting ideas for a future update.",
+        "draft_response": "We appreciate your feedback on future enhancements like dark mode and dashboard font adjustments. These updates will be considered for future releases without a specific timeline. Please let us know if you have additional requests.",
+        "requires_human_review": true,
+        "model_used": "qwen3:4b",
+        "decision_source": "ollama",
+        "warnings": [
+          "Product enhancement routing was corrected by policy."
+        ],
+        "trace": [
+          {
+            "node": "sanitize",
+            "redactions": []
+          },
+          {
+            "node": "analysis_agent",
+            "attempts": 1,
+            "prompt_tokens": 120,
+            "completion_tokens": 74,
+            "duration_ns": 2246926750
+          },
+          {
+            "node": "policy_guardrail",
+            "corrections": 1
+          },
+          {
+            "node": "response_agent",
+            "attempts": 1,
+            "prompt_tokens": 188,
+            "completion_tokens": 48,
+            "duration_ns": 1504723459
+          }
+        ],
+        "created_at": "2026-09-13T15:52:00.162878Z"
+      },
+      "checks": {
+        "category": true,
+        "priority": true,
+        "owner": true
+      },
+      "passed": true
+    },
+    {
+      "id": "05",
+      "expected": {
+        "id": "05",
+        "request_text": "We accidentally uploaded a spreadsheet containing customer contact information to the wrong workspace. We need immediate help removing access.",
+        "expected_category": "Technical",
+        "expected_priority": "Urgent",
+        "expected_owner": "Engineering"
+      },
+      "actual": {
+        "summary": "Customer contact information spreadsheet accidentally uploaded to wrong workspace; request for immediate removal of access.",
+        "category": "Technical",
+        "priority": "Urgent",
+        "priority_reason": "Potential exposure of customer information requires immediate access containment.",
+        "owner": "Engineering",
+        "risk_flags": [
+          "access_control",
+          "privacy"
+        ],
+        "confidence": 0.95,
+        "request_id": "ede23ef9-8e1d-49a9-8204-ea0b465f8c76",
+        "source": "web",
+        "original_request": "We accidentally uploaded a spreadsheet containing customer contact information to the wrong workspace. We need immediate help removing access.",
+        "draft_response": "Thank you for reporting this potential data-access incident. The request has been routed to Engineering for immediate human review; please avoid sharing additional customer data and use an approved secure channel for workspace identifiers. This message acknowledges escalation and does not confirm that access has been removed.",
+        "requires_human_review": true,
+        "model_used": "qwen3:4b",
+        "decision_source": "ollama",
+        "warnings": [
+          "Security incident routing was elevated by policy."
+        ],
+        "trace": [
+          {
+            "node": "sanitize",
+            "redactions": []
+          },
+          {
+            "node": "analysis_agent",
+            "attempts": 1,
+            "prompt_tokens": 115,
+            "completion_tokens": 71,
+            "duration_ns": 2104327041
+          },
+          {
+            "node": "policy_guardrail",
+            "corrections": 1
+          },
+          {
+            "node": "response_guardrail",
+            "status": "security_incident_template"
+          }
+        ],
+        "created_at": "2026-09-13T15:52:02.289562Z"
+      },
+      "checks": {
+        "category": true,
+        "priority": true,
+        "owner": true
+      },
+      "passed": true
+    },
+    {
+      "id": "06",
+      "expected": {
+        "id": "06",
+        "request_text": "I saw your company online and am interested in a custom AI reporting system. What would pricing and a typical timeline look like?",
+        "expected_category": "Sales",
+        "expected_priority": "Medium",
+        "expected_owner": "Sales Team"
+      },
+      "actual": {
+        "summary": "Client expressed interest in custom AI reporting system; inquired about pricing and timeline.",
+        "category": "Sales",
+        "priority": "Medium",
+        "priority_reason": "This is a commercial enquiry with a requested follow-up or buying intent.",
+        "owner": "Sales Team",
+        "risk_flags": [],
+        "confidence": 0.9,
+        "request_id": "546ca0f4-f6b6-4170-a167-a3ed4cf8800c",
+        "source": "web",
+        "original_request": "I saw your company online and am interested in a custom AI reporting system. What would pricing and a typical timeline look like?",
+        "draft_response": "We appreciate your interest in our custom AI reporting system. To move forward securely, please share the specific use case and data requirements for a tailored solution. Pricing and timeline will be provided after we review these details.",
+        "requires_human_review": true,
+        "model_used": "qwen3:4b",
+        "decision_source": "ollama",
+        "warnings": [],
+        "trace": [
+          {
+            "node": "sanitize",
+            "redactions": []
+          },
+          {
+            "node": "analysis_agent",
+            "attempts": 1,
+            "prompt_tokens": 119,
+            "completion_tokens": 78,
+            "duration_ns": 2412484541
+          },
+          {
+            "node": "policy_guardrail",
+            "corrections": 0
+          },
+          {
+            "node": "response_agent",
+            "attempts": 1,
+            "prompt_tokens": 186,
+            "completion_tokens": 50,
+            "duration_ns": 1613686834
+          }
+        ],
+        "created_at": "2026-09-13T15:52:06.374291Z"
+      },
+      "checks": {
+        "category": true,
+        "priority": true,
+        "owner": true
+      },
+      "passed": true
+    }
+  ]
+}

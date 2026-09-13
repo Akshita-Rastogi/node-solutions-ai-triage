@@ -6,7 +6,11 @@ from uuid import uuid4
 import httpx
 
 ROOT = Path(__file__).resolve().parents[1]
-API_URL = os.getenv("API_URL", "http://localhost:8100")
+# Docker publishes container port 8000 as host port 8100. When this script is
+# executed with `docker compose exec api`, localhost therefore uses port 8000;
+# when it is executed directly on the Mac, it uses the published port 8100.
+DEFAULT_API_URL = "http://localhost:8000" if Path("/.dockerenv").exists() else "http://localhost:8100"
+API_URL = os.getenv("EVALUATION_API_URL", DEFAULT_API_URL).rstrip("/")
 API_KEY = os.getenv("API_KEY", "demo-key")
 
 
@@ -15,6 +19,14 @@ def main() -> None:
     cases = json.loads((ROOT / "data" / "evaluation.json").read_text(encoding="utf-8"))
     results = []
     with httpx.Client(timeout=90, headers={"X-API-Key": API_KEY}) as client:
+        try:
+            readiness = client.get(f"{API_URL}/health/ready")
+            readiness.raise_for_status()
+        except httpx.HTTPError as exc:
+            raise SystemExit(
+                f"Evaluation API is unavailable at {API_URL}. Start the stack and wait for "
+                f"/health/ready before retrying. Cause: {type(exc).__name__}"
+            ) from exc
         for case in cases:
             response = client.post(f"{API_URL}/v1/triage", json={
                 "request_text": case["request_text"], "source": "web",

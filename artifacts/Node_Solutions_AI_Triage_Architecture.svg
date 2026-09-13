@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1000" viewBox="0 0 1800 1000">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker>
+    <filter id="shadow"><feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.15"/></filter>
+    <style>
+      .title{font:700 38px Arial,sans-serif;fill:#172554}.sub{font:20px Arial,sans-serif;fill:#475569}
+      .h{font:700 22px Arial,sans-serif;fill:#0f172a}.t{font:17px Arial,sans-serif;fill:#334155}
+      .edge{fill:none;stroke:#334155;stroke-width:3;marker-end:url(#arrow)}.dash{stroke-dasharray:10 8}
+      .box{stroke-width:3;filter:url(#shadow)}
+    </style>
+  </defs>
+  <rect width="1800" height="1000" fill="#f8fafc"/>
+  <text x="900" y="60" text-anchor="middle" class="title">Local, Review-First AI Request Triage</text>
+  <text x="900" y="94" text-anchor="middle" class="sub">LangGraph orchestration · deterministic guardrails · local Ollama · durable human review</text>
+
+  <path class="edge" d="M250 250 H320"/><path class="edge" d="M540 250 H610"/>
+  <path class="edge" d="M820 250 H890"/><path class="edge" d="M1100 250 H1170"/>
+  <path class="edge" d="M1380 250 H1450"/><path class="edge" d="M1555 320 V425 H1325"/>
+  <path class="edge" d="M1430 495 H1490"/><path class="edge dash" d="M430 320 V440"/>
+  <path class="edge dash" d="M430 320 V700 H890"/>
+
+  <g class="box"><rect x="40" y="190" width="210" height="120" rx="18" fill="#dbeafe" stroke="#2563eb"/></g>
+  <text x="145" y="235" text-anchor="middle" class="h">Streamlit UI</text><text x="145" y="270" text-anchor="middle" class="t">challenge examples</text><text x="145" y="295" text-anchor="middle" class="t">+ custom requests</text>
+
+  <g class="box"><rect x="320" y="180" width="220" height="140" rx="18" fill="#e0e7ff" stroke="#4f46e5"/></g>
+  <text x="430" y="220" text-anchor="middle" class="h">FastAPI</text><text x="430" y="255" text-anchor="middle" class="t">validation · API key</text><text x="430" y="280" text-anchor="middle" class="t">status contracts</text><text x="430" y="305" text-anchor="middle" class="t">request ID</text>
+
+  <g class="box"><rect x="610" y="175" width="210" height="150" rx="18" fill="#ccfbf1" stroke="#0f766e"/></g>
+  <text x="715" y="215" text-anchor="middle" class="h">1 · SANITIZE</text><text x="715" y="252" text-anchor="middle" class="t">PII redaction</text><text x="715" y="279" text-anchor="middle" class="t">injection detection</text><text x="715" y="306" text-anchor="middle" class="t">untrusted-input boundary</text>
+
+  <g class="box"><rect x="890" y="175" width="210" height="150" rx="18" fill="#ccfbf1" stroke="#0f766e"/></g>
+  <text x="995" y="215" text-anchor="middle" class="h">2 · ANALYSE</text><text x="995" y="252" text-anchor="middle" class="t">Ollama inference</text><text x="995" y="279" text-anchor="middle" class="t">JSON schema validation</text><text x="995" y="306" text-anchor="middle" class="t">repair + fallback</text>
+
+  <g class="box"><rect x="1170" y="175" width="210" height="150" rx="18" fill="#fef3c7" stroke="#d97706"/></g>
+  <text x="1275" y="215" text-anchor="middle" class="h">3 · VALIDATE</text><text x="1275" y="252" text-anchor="middle" class="t">deterministic incident</text><text x="1275" y="279" text-anchor="middle" class="t">priority + ownership</text><text x="1275" y="306" text-anchor="middle" class="t">policy corrections</text>
+
+  <g class="box"><rect x="1450" y="175" width="210" height="150" rx="18" fill="#ccfbf1" stroke="#0f766e"/></g>
+  <text x="1555" y="215" text-anchor="middle" class="h">4 · DRAFT</text><text x="1555" y="252" text-anchor="middle" class="t">safe local response</text><text x="1555" y="279" text-anchor="middle" class="t">output guardrails</text><text x="1555" y="306" text-anchor="middle" class="t">template fallback</text>
+
+  <g class="box"><rect x="330" y="440" width="200" height="125" rx="18" fill="#fee2e2" stroke="#dc2626"/></g>
+  <text x="430" y="478" text-anchor="middle" class="h">Redis</text><text x="430" y="513" text-anchor="middle" class="t">distributed rate limits</text><text x="430" y="540" text-anchor="middle" class="t">ephemeral TTL keys</text>
+
+  <g class="box"><rect x="1220" y="425" width="210" height="140" rx="18" fill="#ede9fe" stroke="#7c3aed"/></g>
+  <text x="1325" y="465" text-anchor="middle" class="h">PostgreSQL</text><text x="1325" y="500" text-anchor="middle" class="t">request + decision trace</text><text x="1325" y="527" text-anchor="middle" class="t">immutable review record</text><text x="1325" y="551" text-anchor="middle" class="t">durable system of record</text>
+
+  <g class="box"><rect x="1490" y="435" width="240" height="120" rx="18" fill="#dcfce7" stroke="#16a34a"/></g>
+  <text x="1610" y="477" text-anchor="middle" class="h">Human Review</text><text x="1610" y="515" text-anchor="middle" class="t">approve · correct · reject</text><text x="1610" y="540" text-anchor="middle" class="t">review notes + outcome</text>
+
+  <g class="box"><rect x="650" y="700" width="700" height="130" rx="18" fill="#f1f5f9" stroke="#475569"/></g>
+  <text x="1000" y="744" text-anchor="middle" class="h">Observability and Evaluation</text><text x="1000" y="782" text-anchor="middle" class="t">structured JSON logs · correlation IDs · Prometheus metrics · per-node latency</text><text x="1000" y="812" text-anchor="middle" class="t">ground-truth scenarios · guardrail corrections · regression checks</text>
+
+  <rect x="90" y="890" width="1620" height="62" rx="14" fill="#172554"/>
+  <text x="900" y="928" text-anchor="middle" style="font:700 19px Arial,sans-serif;fill:#fff">Privacy by design: raw input is sanitized before inference; durable records live in PostgreSQL; Redis stores no request text.</text>
+</svg>
